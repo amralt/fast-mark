@@ -1,0 +1,32 @@
+.element-block {
+    width: 300px;
+    height: 100px;
+    background-color: aqua;
+    position: absolute;
+    display: block;
+}
+
+.drag-point {
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 10;
+}
+
+.left-up-point {
+    left: 0;
+    top: 0;
+}
+.right-up-point {
+    right: 0;
+    top: 0;
+}
+.left-buttom-point {
+    left: 0;
+    bottom: 0;
+}
+.right-buttom-point {
+    right: 0;
+    bottom: 0;
+}
