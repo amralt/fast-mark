@@ -1,11 +1,9 @@
 import React from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
+import { contentStyles } from "../workspace/workspace";
 
 
-// const basicElement = {id: '1', content: 'everega element'}
-
-export default function ElementsList({elements, updateLoyouts}) {
-  // const [elements, setElements] = React.useState(elementLoyouts);
+export default function ElementsList({elements, updateElements}) {
   
   const [text, setText] = React.useState('hello');
 
@@ -24,7 +22,7 @@ export default function ElementsList({elements, updateLoyouts}) {
     const [reorderedItem] = items.splice(result.source.index, 1);
     items.splice(result.destination.index, 0, reorderedItem);
 
-    updateLoyouts(items)
+    updateElements(items)
   };
 
 
@@ -35,13 +33,14 @@ export default function ElementsList({elements, updateLoyouts}) {
     let newItem = {
       id: newId,
       content: "some cont",
+      contentStyles: contentStyles,
     }
 
     items.push(newItem);
 
     console.log(newItem);
 
-    updateLoyouts(items)
+    updateElements(items)
   }
 
   function addNewElement() {
@@ -54,12 +53,13 @@ export default function ElementsList({elements, updateLoyouts}) {
       left: 0,
       top: 0,
       zIndex: newId,
+      width: "100px",
+      height: "100px"
     }
 
     items.push(newItem);
   }
 
- let gagagaga= "gagagagag";
 
   return (
     <>
@@ -75,9 +75,9 @@ export default function ElementsList({elements, updateLoyouts}) {
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
                     // index меняется при перетягивании!!!
-                    onClick={() => {console.log(index)}}
                   >
-                    {element.content}
+                    {/* TODO: реализовать возможность для пользователя изменять айди  */}
+                    {element.id}
                   </li>
                 )}
               </Draggable>
@@ -87,7 +87,7 @@ export default function ElementsList({elements, updateLoyouts}) {
         )}
       </Droppable>
     </DragDropContext>
-    <button  onClick={handleOnClick}>click!!!</button>
+    <button  onClick={handleOnClick}>render text</button>
                   
       <>
         <input value={text} onChange={handleChange} />
@@ -95,7 +95,6 @@ export default function ElementsList({elements, updateLoyouts}) {
         <button onClick={addNewElement}>
           add
         </button>
-          {gagagaga}
       </>
 
     </>

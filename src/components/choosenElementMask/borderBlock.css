@@ -1,0 +1,24 @@
+.border-side-div {
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background-color: black;
+}
+.border-upper-div {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+}
+.buttom-border {
+    bottom: 0;
+}
+.top-border {
+    top: 0;
+}
+.left-border {
+    left: 0px;
+}
+.right-border {
+    right: 0;
+}

@@ -1,18 +1,17 @@
 .element-block {
     width: 300px;
     height: 100px;
-    background-color: aqua;
+    border: 3px;
+    border-color: brown;
     position: absolute;
-    display: block;
+    display: flex;
 }
 
-.drag-point {
-    background-color: red;
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    z-index: 10;
+.content-element {
+    background-color: aqua;
+    display: inline-block;
 }
+
 
 .left-up-point {
     left: 0;

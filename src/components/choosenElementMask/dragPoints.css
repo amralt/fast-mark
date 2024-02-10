@@ -1,0 +1,25 @@
+.drag-point {
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    z-index: 10;
+}
+
+
+.left-up-point {
+    left: 0;
+    top: 0;
+}
+.right-up-point {
+    right: 0;
+    top: 0;
+}
+.left-buttom-point {
+    left: 0;
+    bottom: 0;
+}
+.right-buttom-point {
+    right: 0;
+    bottom: 0;
+}
